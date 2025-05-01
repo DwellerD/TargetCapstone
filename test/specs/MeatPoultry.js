@@ -20,19 +20,24 @@ describe('Meat & Seafood Category Secure Page Test', () => {
     it(`should verify ${name}`, async () => {
       await browser.reloadSession();
       await TargetPage.open();
+      await browser.pause(1000);
 
       await GroceryPage.categoriesButton.waitForClickable({ timeout: 10000 });
       await GroceryPage.categoriesButton.click();
+      await browser.pause(1000);
 
       await GroceryPage.groceryMain.waitForClickable({ timeout: 10000 });
       await GroceryPage.groceryMain.click();
+      await browser.pause(1000);
 
       await GroceryPage.meatSeafood.waitForClickable({ timeout: 10000 });
       await GroceryPage.meatSeafood.click();
+      await browser.pause(1000);
 
       const button = click();
       await button.waitForClickable({ timeout: 10000 });
       await button.click();
+      await browser.pause(1000);
 
       const secureElement = secure();
       await secureElement.waitForDisplayed({ timeout: 15000 });

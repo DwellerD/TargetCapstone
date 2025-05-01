@@ -58,7 +58,14 @@ class SecurePage {
   get gummyChewyCandy() { return $('//h1[@data-test="page-title" and text()="Gummy & Chewy Candy"]'); }
   get hardCandy() { return $('//h1[@data-test="page-title" and text()="Hard Candy"]'); }
   get frozenAppetizersAndSnacks() { return $('//h1[@data-test="page-title" and text()="Frozen Appetizers & Snacks"]'); }
-
+  get chipMultipacks() { return $('//h1[@data-test="page-title" and text()="Chip Multipacks"]'); }
+  get cookieMultipacks() { return $('//h1[@data-test="page-title" and text()="Cookie Multipacks"]'); }
+  get crackerMultipacks() { return $('//h1[@data-test="page-title" and text()="Cracker Multipacks"]'); }
+  get popcornPretzelMultipacks() { return $('//h1[@data-test="page-title" and text()="Popcorn & Pretzel Multipacks"]'); }
+  get granolaCerealBars() { return $('//h1[@data-test="page-title" and text()="Granola & Cereal Bars"]'); }
+  get fruitSnacks() { return $('//h1[@data-test="page-title" and text()="Fruit Snacks"]'); }
+  get appleSauceFruitCups() { return $('//h1[@data-test="page-title" and text()="Applesauce & Fruit Cups"]'); }
+  
   //Meat and Seafoods
 
   get beef() { return $('//h1[@data-test="page-title" and text()="Beef"]'); }
@@ -113,7 +120,53 @@ class SecurePage {
   get cocoa() { return $('//h1[@data-test="page-title" and text()="Cocoa"]'); }
   get drinkMixes() { return $('//h1[@data-test="page-title" and text()="Powdered & Liquid Drink Mixes"]'); }
   get proteinDrinks() { return $('//h1[@data-test="page-title" and text()="Protein & Meal Replacement Drinks"]'); }
-  
+  get perfectMealPairings() { return $('//h1[@data-test="page-title" and text()="Perfect Meal Pairings"]'); }
+  get topRatedWines() { return $('//h1[@data-test="page-title" and text()="Top Rated Wines Under $15"]'); }
+  get lowCalDrinks() { return $('//h1[@data-test="page-title" and text()="100 Calorie Or Less Drinks"]'); }
+  get wine() { return $('//h1[@data-test="page-title" and text()="Wine"]'); }
+  get seltzersCocktails() { return $('//h1[@data-test="page-title" and text()="Hard Seltzers & Canned Cocktails"]'); }
+  get beer() { return $('//h1[@data-test="page-title" and text()="Beer"]'); }
+  get liquor() { return $('//h1[@data-test="page-title" and text()="Liquor"]'); }
+  get targetSelects() { return $('//h1[@data-test="page-title" and text()="Target Selects"]'); }
+  get nonAlcoholicDrinks() { return $('//h1[@data-test="page-title" and text()="Non-Alcoholic Drinks"]'); }
+  get cocktailMixers() { return $('//h1[@data-test="page-title" and text()="Cocktail Mixers"]'); }
+  get barWineTools() { return $('//h1[@data-test="page-title" and text()="Bar & Wine Tools"]'); }
+    // Wine, Beer & Liquor submenu
+get perfectMealPairings() { return $('//h1[text()="Perfect Meal Pairings"]'); }
+get topRatedWinesUnder15() { return $('//h1[text()="Top Rated Wines Under $15"]'); }
+get lowCalDrinks() { return $('//h1[contains(text(),"100 Calorie")]'); }
+get wine() { return $('//h1[text()="Wine"]'); }
+get hardSeltzers() { return $('//h1[text()="Hard Seltzers & Canned Cocktails"]'); }
+get beer() { return $('//h1[text()="Beer"]'); }
+get liquor() { return $('//h1[text()="Liquor"]'); }
+get targetSelects() { return $('//h1[text()="Target Selects"]'); }
+get nonAlcoholicDrinks() { return $('//h1[text()="Non-Alcoholic Drinks"]'); }
+get cocktailMixersSub() { return $('//h1[text()="Cocktail Mixers"]'); }
+get barWineTools() { return $('//h1[text()="Bar & Wine Tools"]'); }
+
+// Wine submenu
+get wineUnder15() { return $('//h1[text()="Top Rated Wines Under $15"]'); }
+get winePairings() { return $('//h1[text()="Perfect Pairings"]'); }
+get whiteWine() { return $('//h1[text()="White Wine"]'); }
+get redWine() { return $('//h1[text()="Red Wine"]'); }
+get roseWine() { return $('//h1[text()="Rose Wine"]'); }
+get sparklingWine() { return $('//h1[text()="Champagne & Sparkling Wine"]'); }
+
+// Beer submenu
+get allBeer() { return $('//h1[text()="All Beer"]'); }
+get craftBeer() { return $('//h1[text()="Craft Beer"]'); }
+get domesticBeer() { return $('//h1[text()="Domestic Beer"]'); }
+get importBeer() { return $('//h1[text()="Import Beer"]'); }
+
+//Coffee submenu
+get groundCoffee() { return $('//h1[@data-test="page-title" and text()="Ground Coffee"]'); }
+get kCupsCoffeePods() { return $('//h1[@data-test="page-title" and text()="K-Cups & Coffee Pods"]'); }
+get wholeBeanCoffee() { return $('//h1[@data-test="page-title" and text()="Whole Bean Coffee"]'); }
+get espresso() { return $('//h1[@data-test="page-title" and text()="Espresso"]'); }
+get coffeeCreamers() { return $('//h1[@data-test="page-title" and text()="Coffee Creamers"]'); }
+get coldBrewBottledCoffee() { return $('//h1[@data-test="page-title" and text()="Cold Brew & Bottled Coffee"]'); }
+get instantCoffee() { return $('//h1[@data-test="page-title" and text()="Instant Coffee"]'); }
+
   //Pantry
 
   get bulkPantry() { return $('//h1[@data-test="page-title" and text()="Bulk Pantry"]'); }
@@ -132,7 +185,31 @@ class SecurePage {
   get sugarSweeteners() { return $('//h1[@data-test="page-title" and text()="Sugar & Sweeteners"]'); }
   get applesauceFruitCupsPantry() { return $('//h1[@data-test="page-title" and text()="Applesauce & Fruit Cups"]'); }
   get emergencyFood() { return $('//h1[@data-test="page-title" and text()="Emergency Food"]'); }
-
+  get cannedFruit() { return $('//h1[@data-test="page-title" and text()="Canned Fruit"]'); }
+  get cannedVegetables() { return $('//h1[@data-test="page-title" and text()="Canned Vegetables"]'); }
+  get cannedMeat() { return $('//h1[@data-test="page-title" and text()="Canned Meat"]'); }
+  get cannedTunaSeafood() { return $('//h1[@data-test="page-title" and text()="Canned Tuna & Seafood"]'); }
+  get olivesPicklesPeppers() { return $('//h1[@data-test="page-title" and text()="Olives, Pickles & Peppers"]'); }
+  get breadcrumbsSeasonedCoatings() { return $('//h1[@data-test="page-title" and text()="Breadcrumbs & Seasoned Coatings"]'); }
+  get herbsRubsSpices() { return $('//h1[@data-test="page-title" and text()="Herbs, Rubs & Spices"]'); }
+  get saltPepper() { return $('//h1[@data-test="page-title" and text()="Salt & Pepper"]'); }
+  get bakingNuts() { return $('//h1[@data-test="page-title" and text()="Nuts"]'); }
+  get bakingDriedFruitRaisins() { return $('//h1[@data-test="page-title" and text()="Dried Fruit & Raisins"]'); }
+  get sugarSweeteners() { return $('//h1[@data-test="page-title" and text()="Sugar & Sweeteners"]'); }
+  get bakingChipsCocoa() { return $('//h1[@data-test="page-title" and text()="Baking Chips & Cocoa"]'); }
+  get bakingKitsMixes() { return $('//h1[@data-test="page-title" and text()="Baking Kits & Mixes"]'); }
+  get bakingPowderSodaYeast() { return $('//h1[@data-test="page-title" and text()="Baking Powder, Baking Soda & Yeast"]'); }
+  get condensedPowderedMilk() { return $('//h1[@data-test="page-title" and text()="Condensed & Powdered Milk"]'); }
+  get extractsFoodColoring() { return $('//h1[@data-test="page-title" and text()="Extracts & Food Coloring"]'); }
+  get floursMeals() { return $('//h1[@data-test="page-title" and text()="Flours & Meals"]'); }
+  get frostingIcing() { return $('//h1[@data-test="page-title" and text()="Frosting & Icing"]'); }
+  get bakingGelatinPudding() { return $('//h1[@data-test="page-title" and text()="Gelatin & Pudding"]'); }
+  get marshmallows() { return $('//h1[@data-test="page-title" and text()="Marshmallows"]'); }
+  get pieCrustsFilling() { return $('//h1[@data-test="page-title" and text()="Pie Crusts & Filling"]'); }
+  get sprinklesCandlesDecorations() { return $('//h1[@data-test="page-title" and text()="Sprinkles, Candles & Decorations"]'); }
+  get bakingSyrupsSauces() { return $('//h1[@data-test="page-title" and text()="Syrups & Sauces"]'); }
+  
+  
   //Deli
 
   get allDeli() { return $('//h1[@data-test="page-title" and text()="All Deli"]'); }
@@ -176,8 +253,7 @@ class SecurePage {
 
   // Breakfast & Cereal
 
-  get breakfastCereal() { return $('//h1[@data-test="page-title" and text()="Breakfast & Cereal"]'); }
-  get organicBreakfastCereal() { return $('//h1[@data-test="page-title" and text()="Organic Breakfast Cereal"]'); }
+  get organicBreakfastCereal() { return $('//h1[@data-test="page-title" and text()="Organic Breakfast & Cereal"]'); }
   get cerealGranola() { return $('//h1[@data-test="page-title" and text()="Cereal & Granola"]'); }
   get oatmeal() { return $('//h1[@data-test="page-title" and text()="Oatmeal"]'); }
   get pancakeMixesSyrup() { return $('//h1[@data-test="page-title" and text()="Pancake Mixes, Waffle Mixes & Syrup"]'); }

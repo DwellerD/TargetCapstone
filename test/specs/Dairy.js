@@ -17,11 +17,27 @@ describe('Dairy Subcategory Secure Pages', () => {
     it(`should verify ${name}`, async () => {
       await browser.reloadSession();
       await TargetPage.open();
+      await browser.pause(1000);
+
+      await GroceryPage.categoriesButton.waitForClickable({ timeout: 10000 });
       await GroceryPage.categoriesButton.click();
+      await browser.pause(1000);
+
+      await GroceryPage.groceryMain.waitForClickable({ timeout: 10000 });
       await GroceryPage.groceryMain.click();
+      await browser.pause(1000);
+
+      await GroceryPage.dairy.waitForClickable({ timeout: 10000 });
       await GroceryPage.dairy.click();
-      await click().click();
-      await secure().waitForDisplayed({ timeout: 10000 });
+      await browser.pause(1000);
+
+      const item = click();
+      await item.waitForClickable({ timeout: 10000 });
+      await item.click();
+      await browser.pause(1000);
+
+      const page = secure();
+      await page.waitForDisplayed({ timeout: 10000 });
     });
   });
 });

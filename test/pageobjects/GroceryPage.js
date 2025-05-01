@@ -98,6 +98,13 @@ get frozenFishAndSeafood() { return $('[data-id="cs8z5"]'); }
   get fruitSnacks() { return $('[data-id="5xsy4"]'); }
   get snackPacksOnTheGo() { return $('[data-id="dhjbd"]'); }
   get applesauceFruitCups() { return $('[data-id="5xsy8"]'); }
+  get chipMultipacks() { return $('[data-id="7ker"]'); }
+  get cookieMultipacks() { return $('[data-id="v247q"]'); }
+  get crackerMultipacks() { return $('[data-id="95u1d"]'); }
+  get popcornPretzelMultipacks() { return $('[data-id="55oea"]'); }
+  get granolaCerealBars() { return $('[data-id="4ydo1"]'); }
+  get fruitSnacks() { return $('[data-id="5xsy4"]'); }
+  get appleSauceFruitCups() { return $('[data-id="5xsy8"]'); }
   
   
 
@@ -155,6 +162,66 @@ get frozenFishAndSeafood() { return $('[data-id="cs8z5"]'); }
   get cocoa() { return $('[data-id="4yi5n"]'); }
   get drinkMixes() { return $('[data-id="5xt0n"]'); }
   get proteinDrinks() { return $('[data-id="4uez0"]'); }
+  get perfectMealPairings() { return $('[data-id="10ab1"]'); }
+  get topRatedWines() { return $('[data-id="ypj4e"]'); }
+  get lowCalDrinks() { return $('[data-id="46b4e"]'); }
+  get wine() { return $('[data-id="5xsxv"]'); }
+  get seltzersCocktails() { return $('[data-id="mar4j"]'); }
+  get beer() { return $('[data-id="5xsxx"]'); }
+  get liquor() { return $('[data-id="5xsxw"]'); }
+  get targetSelects() { return $('[data-id="iscgt"]'); }
+  get nonAlcoholicDrinks() { return $('[data-id="gjl0q"]'); }
+  get cocktailMixers() { return $('[data-id="4uez3"]'); }
+  get barWineTools() { return $('[data-id="5xts9"]'); }
+        // Wine, Beer & Liquor submenu
+get perfectMealPairings() { return $('[data-id="10ab1"]'); }
+get topRatedWinesUnder15() { return $('[data-id="ypj4e"]'); }
+get lowCalDrinks() { return $('[data-id="46b4e"]'); }
+get wine() { return $('[data-id="5xsxv"]'); }
+get hardSeltzers() { return $('[data-id="mar4j"]'); }
+get beer() { return $('[data-id="5xsxx"]'); }
+get liquor() { return $('[data-id="5xsxw"]'); }
+get targetSelects() { return $('[data-id="iscgt"]'); }
+get nonAlcoholicDrinks() { return $('[data-id="gjl0q"]'); }
+get cocktailMixersSub() { return $('[data-id="4uez3"]'); }
+get barWineTools() { return $('[data-id="5xts9"]'); }
+
+// Wine submenu
+get wineUnder15() { return $('[data-id="ypj4e"]'); }
+get winePairings() { return $('[data-id="kpr3f"]'); }
+get whiteWine() { return $('[data-id="yskry"]'); }
+get redWine() { return $('[data-id="fups0"]'); }
+get roseWine() { return $('[data-id="qqz02"]'); }
+get sparklingWine() { return $('[data-id="dd9ke"]'); }
+
+// Beer submenu
+get allBeer() { return $('[data-id="d7mti"]'); }
+get craftBeer() { return $('[data-id="o3thc"]'); }
+get domesticBeer() { return $('[data-id="jsxeu"]'); }
+get importBeer() { return $('[data-id="00g2y"]'); }
+
+//Coffee submenu
+get groundCoffee() { return $('[data-id="x2hqv"]'); }
+get kCupsCoffeePods() { return $('[data-id="6kpkn"]'); }
+get wholeBeanCoffee() { return $('[data-id="n8upo"]'); }
+get espresso() { return $('[data-id="2dpp9"]'); }
+get coffeeCreamers() { return $('[data-id="5xszv"]'); }
+get coldBrewBottledCoffee() { return $('[data-id="260b3"]'); }
+get instantCoffee() { return $('[data-id="05hso"]'); }
+
+get liquorTopSpirits() { return $('[data-id="y2mjk"]'); }
+get liquorVodka() { return $('[data-id="ln0x9"]'); }
+get liquorBourbon() { return $('[data-id="xxj34"]'); }
+get liquorWhiskey() { return $('[data-id="5xm96"]'); }
+get liquorTequila() { return $('[data-id="0091p"]'); }
+get liquorRum() { return $('[data-id="vazqx"]'); }
+get liquorGin() { return $('[data-id="9vaw3"]'); }
+get liquorScotch() { return $('[data-id="ar4qr"]'); }
+get liquorBrandyCognac() { return $('[data-id="hpmj8"]'); }
+get liquorCocktailMixers() { return $('[data-id="4uez3"]'); }
+get liquorLiqueursCordialsSchnapps() { return $('[data-id="fij4m"]'); }
+get liquorBarWineTools() { return $('[data-id="5xts9"]'); }
+
 
   // Pantry
   get pantry() { return $('[data-id="5xt13"]'); }
@@ -170,6 +237,30 @@ get frozenFishAndSeafood() { return $('[data-id="cs8z5"]'); }
   get cookingOilVinegar() { return $('[data-id="4u9ly"]'); }
   get sugarSweeteners() { return $('[data-id="5xt0u"]'); }
   get emergencyFood() { return $('[data-id="4ykz6"]'); }
+  get cannedFruit() { return $('[data-id="6peje"]'); }
+  get cannedVegetables() { return $('[data-id="sl97t"]'); }
+  get cannedMeat() { return $('[data-id="2m8ve"]'); }
+  get cannedTunaSeafood() { return $('[data-id="7yq1l"]'); }
+  get olivesPicklesPeppers() { return $('[data-id="40p8x"]'); }
+  get breadcrumbsSeasonedCoatings() { return $('[data-id="4u9lh"]'); }
+  get herbsRubsSpices() { return $('[data-id="4u9lf"]'); }
+  get saltPepper() { return $('[data-id="4u9lg"]'); }
+  get bakingNuts() { return $('[data-id="tc851"]'); }
+  get bakingDriedFruitRaisins() { return $('[data-id="5xt0y"]'); }
+  get sugarSweeteners() { return $('[data-id="5xt0u"]'); }
+  get bakingChipsCocoa() { return $('[data-id="5xt12"]'); }
+  get bakingKitsMixes() { return $('[data-id="5xt11"]'); }
+  get bakingPowderSodaYeast() { return $('[data-id="5xt0s"]'); }
+  get condensedPowderedMilk() { return $('[data-id="5xt03"]'); }
+  get extractsFoodColoring() { return $('[data-id="4u9lt"]'); }
+  get floursMeals() { return $('[data-id="4u9lu"]'); }
+  get frostingIcing() { return $('[data-id="4u9ls"]'); }
+  get bakingGelatinPudding() { return $('[data-id="5xsy3"]'); }
+  get marshmallows() { return $('[data-id="5xt0v"]'); }
+  get pieCrustsFilling() { return $('[data-id="4u9lr"]'); }
+  get sprinklesCandlesDecorations() { return $('[data-id="5xt0z"]'); }
+  get bakingSyrupsSauces() { return $('[data-id="5xt0w"]'); }
+  
 
   // Breakfast & Cereal
   get breakfastCereal() { return $('[data-id="wo2mp"]'); }

@@ -18,22 +18,28 @@ describe('Bakery & Bread Subcategory Secure Pages', () => {
     it(`should verify ${name}`, async () => {
       await browser.reloadSession();
       await TargetPage.open();
+      await browser.pause(1000);
 
       await GroceryPage.categoriesButton.waitForClickable({ timeout: 10000 });
       await GroceryPage.categoriesButton.click();
+      await browser.pause(1000);
 
       await GroceryPage.groceryMain.waitForClickable({ timeout: 10000 });
       await GroceryPage.groceryMain.click();
+      await browser.pause(1000);
 
       await GroceryPage.bakeryBread.waitForClickable({ timeout: 10000 });
       await GroceryPage.bakeryBread.click();
+      await browser.pause(1000);
 
       const element = click();
       await element.waitForClickable({ timeout: 10000 });
       await element.click();
+      await browser.pause(1000);
 
       const secureElement = secure();
       await secureElement.waitForDisplayed({ timeout: 15000 });
+      await browser.pause(500);
     });
   });
 });

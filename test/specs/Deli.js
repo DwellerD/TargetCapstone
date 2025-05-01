@@ -16,11 +16,24 @@ describe('Deli Subcategory Flow Test', () => {
     it(`should verify Deli subcategory: ${name}`, async () => {
       await browser.reloadSession();
       await TargetPage.open();
+      await browser.pause(1000);
+
       await GroceryPage.categoriesButton.click();
+      await browser.pause(1000);
+
       await GroceryPage.groceryMain.click();
+      await browser.pause(1000);
+
       await GroceryPage.deli.click();
+      await browser.pause(1000);
+
       await click().click();
+      await browser.pause(1000);
+
       await secure().waitForDisplayed({ timeout: 10000 });
     });
   });
 });
+
+
+//need to fix artisian and cheese

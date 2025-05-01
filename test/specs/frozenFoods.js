@@ -65,22 +65,31 @@ describe('Frozen Foods Secure Page Tests (No Meat/Poultry)', () => {
     it(`should verify ${name}`, async () => {
       await browser.reloadSession();
       await TargetPage.open();
+      await browser.pause(1000);
 
       await GroceryPage.categoriesButton.waitForClickable({ timeout: 10000 });
       await GroceryPage.categoriesButton.click();
+      await browser.pause(1000);
 
       await GroceryPage.groceryMain.waitForClickable({ timeout: 10000 });
       await GroceryPage.groceryMain.click();
+      await browser.pause(1000);
 
+      await GroceryPage.frozenFoods.scrollIntoView();
       await GroceryPage.frozenFoods.waitForClickable({ timeout: 10000 });
       await GroceryPage.frozenFoods.click();
+      await browser.pause(1000);
 
       const sectionElement = click();
+      await sectionElement.scrollIntoView();
       await sectionElement.waitForClickable({ timeout: 10000 });
       await sectionElement.click();
+      await browser.pause(1000);
 
       const secureTitle = secure();
       await secureTitle.waitForDisplayed({ timeout: 15000 });
     });
   });
 });
+
+// Cannot read properties of undefined (reading 'waitForDisplayed')
