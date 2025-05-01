@@ -131,41 +131,56 @@ class SecurePage {
   get nonAlcoholicDrinks() { return $('//h1[@data-test="page-title" and text()="Non-Alcoholic Drinks"]'); }
   get cocktailMixers() { return $('//h1[@data-test="page-title" and text()="Cocktail Mixers"]'); }
   get barWineTools() { return $('//h1[@data-test="page-title" and text()="Bar & Wine Tools"]'); }
-    // Wine, Beer & Liquor submenu
-get perfectMealPairings() { return $('//h1[text()="Perfect Meal Pairings"]'); }
-get topRatedWinesUnder15() { return $('//h1[text()="Top Rated Wines Under $15"]'); }
-get lowCalDrinks() { return $('//h1[contains(text(),"100 Calorie")]'); }
-get wine() { return $('//h1[text()="Wine"]'); }
-get hardSeltzers() { return $('//h1[text()="Hard Seltzers & Canned Cocktails"]'); }
-get beer() { return $('//h1[text()="Beer"]'); }
-get liquor() { return $('//h1[text()="Liquor"]'); }
-get targetSelects() { return $('//h1[text()="Target Selects"]'); }
-get nonAlcoholicDrinks() { return $('//h1[text()="Non-Alcoholic Drinks"]'); }
-get cocktailMixersSub() { return $('//h1[text()="Cocktail Mixers"]'); }
-get barWineTools() { return $('//h1[text()="Bar & Wine Tools"]'); }
 
-// Wine submenu
-get wineUnder15() { return $('//h1[text()="Top Rated Wines Under $15"]'); }
-get winePairings() { return $('//h1[text()="Perfect Pairings"]'); }
-get whiteWine() { return $('//h1[text()="White Wine"]'); }
-get redWine() { return $('//h1[text()="Red Wine"]'); }
-get roseWine() { return $('//h1[text()="Rose Wine"]'); }
-get sparklingWine() { return $('//h1[text()="Champagne & Sparkling Wine"]'); }
+      // Wine, Beer & Liquor submenu
+    get perfectMealPairings() { return $('//h1[text()="Perfect Meal Pairings"]'); }
+    get topRatedWinesUnder15() { return $('//h1[text()="Top Rated Wines Under $15"]'); }
+    get lowCalDrinks() { return $('//h1[contains(text(),"100 Calorie")]'); }
+    get wine() { return $('//h1[text()="Wine"]'); }
+    get hardSeltzers() { return $('//h1[text()="Hard Seltzers & Canned Cocktails"]'); }
+    get beer() { return $('//h1[text()="Beer"]'); }
+    get liquor() { return $('//h1[text()="Liquor"]'); }
+    get targetSelects() { return $('//h1[text()="Target Selects"]'); }
+    get nonAlcoholicDrinks() { return $('//h1[text()="Non-Alcoholic Drinks"]'); }
+    get cocktailMixersSub() { return $('//h1[text()="Cocktail Mixers"]'); }
+    get barWineTools() { return $('//h1[text()="Bar & Wine Tools"]'); }
 
-// Beer submenu
-get allBeer() { return $('//h1[text()="All Beer"]'); }
-get craftBeer() { return $('//h1[text()="Craft Beer"]'); }
-get domesticBeer() { return $('//h1[text()="Domestic Beer"]'); }
-get importBeer() { return $('//h1[text()="Import Beer"]'); }
+    // Wine submenu
+    get wineUnder15() { return $('//h1[text()="Top Rated Wines Under $15"]'); }
+    get winePairings() { return $('//h1[text()="Perfect Pairings"]'); }
+    get whiteWine() { return $('//h1[text()="White Wine"]'); }
+    get redWine() { return $('//h1[text()="Red Wine"]'); }
+    get roseWine() { return $('//h1[text()="Rose Wine"]'); }
+    get sparklingWine() { return $('//h1[text()="Champagne & Sparkling Wine"]'); }
 
-//Coffee submenu
-get groundCoffee() { return $('//h1[@data-test="page-title" and text()="Ground Coffee"]'); }
-get kCupsCoffeePods() { return $('//h1[@data-test="page-title" and text()="K-Cups & Coffee Pods"]'); }
-get wholeBeanCoffee() { return $('//h1[@data-test="page-title" and text()="Whole Bean Coffee"]'); }
-get espresso() { return $('//h1[@data-test="page-title" and text()="Espresso"]'); }
-get coffeeCreamers() { return $('//h1[@data-test="page-title" and text()="Coffee Creamers"]'); }
-get coldBrewBottledCoffee() { return $('//h1[@data-test="page-title" and text()="Cold Brew & Bottled Coffee"]'); }
-get instantCoffee() { return $('//h1[@data-test="page-title" and text()="Instant Coffee"]'); }
+    // Beer submenu
+    get allBeer() { return $('//h1[text()="All Beer"]'); }
+    get craftBeer() { return $('//h1[text()="Craft Beer"]'); }
+    get domesticBeer() { return $('//h1[text()="Domestic Beer"]'); }
+    get importBeer() { return $('//h1[text()="Import Beer"]'); }
+
+    //Coffee submenu
+    get groundCoffee() { return $('//h1[@data-test="page-title" and text()="Ground Coffee"]'); }
+    get kCupsCoffeePods() { return $('//h1[@data-test="page-title" and text()="K-Cups & Coffee Pods"]'); }
+    get wholeBeanCoffee() { return $('//h1[@data-test="page-title" and text()="Whole Bean Coffee"]'); }
+    get espresso() { return $('//h1[@data-test="page-title" and text()="Espresso"]'); }
+    get coffeeCreamers() { return $('//h1[@data-test="page-title" and text()="Coffee Creamers"]'); }
+    get coldBrewBottledCoffee() { return $('//h1[@data-test="page-title" and text()="Cold Brew & Bottled Coffee"]'); }
+    get instantCoffee() { return $('//h1[@data-test="page-title" and text()="Instant Coffee"]'); }
+
+    //Liquor submenu
+    get liquorTopSpirits() { return $('//h1[@data-test="page-title" and text()="Top Spirits"]'); }
+    get liquorVodka() { return $('//h1[@data-test="page-title" and text()="Vodka"]'); }
+    get liquorBourbon() { return $('//h1[@data-test="page-title" and text()="Bourbon"]'); }
+    get liquorWhiskey() { return $('//h1[@data-test="page-title" and text()="Whiskey"]'); }
+    get liquorTequila() { return $('//h1[@data-test="page-title" and text()="Tequila"]'); }
+    get liquorRum() { return $('//h1[@data-test="page-title" and text()="Rum"]'); }
+    get liquorGin() { return $('//h1[@data-test="page-title" and text()="Gin"]'); }
+    get liquorScotch() { return $('//h1[@data-test="page-title" and text()="Scotch"]'); }
+    get liquorBrandyCognac() { return $('//h1[@data-test="page-title" and text()="Brandy & Cognac"]'); }
+    get liquorCocktailMixers() { return $('//h1[@data-test="page-title" and text()="Cocktail Mixers"]'); }
+    get liquorLiqueursCordialsSchnapps() { return $('//h1[@data-test="page-title" and text()="Liqueurs, Cordials & Schnapps"]'); }
+    get liquorBarWineTools() { return $('//h1[@data-test="page-title" and text()="Bar & Wine Tools"]'); }
 
   //Pantry
 

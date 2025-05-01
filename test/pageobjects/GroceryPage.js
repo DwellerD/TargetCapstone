@@ -173,54 +173,54 @@ get frozenFishAndSeafood() { return $('[data-id="cs8z5"]'); }
   get nonAlcoholicDrinks() { return $('[data-id="gjl0q"]'); }
   get cocktailMixers() { return $('[data-id="4uez3"]'); }
   get barWineTools() { return $('[data-id="5xts9"]'); }
-        // Wine, Beer & Liquor submenu
-get perfectMealPairings() { return $('[data-id="10ab1"]'); }
-get topRatedWinesUnder15() { return $('[data-id="ypj4e"]'); }
-get lowCalDrinks() { return $('[data-id="46b4e"]'); }
-get wine() { return $('[data-id="5xsxv"]'); }
-get hardSeltzers() { return $('[data-id="mar4j"]'); }
-get beer() { return $('[data-id="5xsxx"]'); }
-get liquor() { return $('[data-id="5xsxw"]'); }
-get targetSelects() { return $('[data-id="iscgt"]'); }
-get nonAlcoholicDrinks() { return $('[data-id="gjl0q"]'); }
-get cocktailMixersSub() { return $('[data-id="4uez3"]'); }
-get barWineTools() { return $('[data-id="5xts9"]'); }
+ // Wine, Beer & Liquor submenu
+    get perfectMealPairings() { return $('[data-id="10ab1"]'); }
+    get topRatedWinesUnder15() { return $('[data-id="ypj4e"]'); }
+    get lowCalDrinks() { return $('[data-id="46b4e"]'); }
+    get wine() { return $('[data-id="5xsxv"]'); }
+    get hardSeltzers() { return $('[data-id="mar4j"]'); }
+    get beer() { return $('[data-id="5xsxx"]'); }
+    get liquor() { return $('[data-id="5xsxw"]'); }
+    get targetSelects() { return $('[data-id="iscgt"]'); }
+    get nonAlcoholicDrinks() { return $('[data-id="gjl0q"]'); }
+    get cocktailMixersSub() { return $('[data-id="4uez3"]'); }
+    get barWineTools() { return $('[data-id="5xts9"]'); }
 
-// Wine submenu
-get wineUnder15() { return $('[data-id="ypj4e"]'); }
-get winePairings() { return $('[data-id="kpr3f"]'); }
-get whiteWine() { return $('[data-id="yskry"]'); }
-get redWine() { return $('[data-id="fups0"]'); }
-get roseWine() { return $('[data-id="qqz02"]'); }
-get sparklingWine() { return $('[data-id="dd9ke"]'); }
+    // Wine submenu
+    get wineUnder15() { return $('[data-id="ypj4e"]'); }
+    get winePairings() { return $('[data-id="kpr3f"]'); }
+    get whiteWine() { return $('[data-id="yskry"]'); }
+    get redWine() { return $('[data-id="fups0"]'); }
+    get roseWine() { return $('[data-id="qqz02"]'); }
+    get sparklingWine() { return $('[data-id="dd9ke"]'); }
 
-// Beer submenu
-get allBeer() { return $('[data-id="d7mti"]'); }
-get craftBeer() { return $('[data-id="o3thc"]'); }
-get domesticBeer() { return $('[data-id="jsxeu"]'); }
-get importBeer() { return $('[data-id="00g2y"]'); }
+    // Beer submenu
+    get allBeer() { return $('[data-id="d7mti"]'); }
+    get craftBeer() { return $('[data-id="o3thc"]'); }
+    get domesticBeer() { return $('[data-id="jsxeu"]'); }
+    get importBeer() { return $('[data-id="00g2y"]'); }
 
-//Coffee submenu
-get groundCoffee() { return $('[data-id="x2hqv"]'); }
-get kCupsCoffeePods() { return $('[data-id="6kpkn"]'); }
-get wholeBeanCoffee() { return $('[data-id="n8upo"]'); }
-get espresso() { return $('[data-id="2dpp9"]'); }
-get coffeeCreamers() { return $('[data-id="5xszv"]'); }
-get coldBrewBottledCoffee() { return $('[data-id="260b3"]'); }
-get instantCoffee() { return $('[data-id="05hso"]'); }
-
-get liquorTopSpirits() { return $('[data-id="y2mjk"]'); }
-get liquorVodka() { return $('[data-id="ln0x9"]'); }
-get liquorBourbon() { return $('[data-id="xxj34"]'); }
-get liquorWhiskey() { return $('[data-id="5xm96"]'); }
-get liquorTequila() { return $('[data-id="0091p"]'); }
-get liquorRum() { return $('[data-id="vazqx"]'); }
-get liquorGin() { return $('[data-id="9vaw3"]'); }
-get liquorScotch() { return $('[data-id="ar4qr"]'); }
-get liquorBrandyCognac() { return $('[data-id="hpmj8"]'); }
-get liquorCocktailMixers() { return $('[data-id="4uez3"]'); }
-get liquorLiqueursCordialsSchnapps() { return $('[data-id="fij4m"]'); }
-get liquorBarWineTools() { return $('[data-id="5xts9"]'); }
+    //Coffee submenu
+    get groundCoffee() { return $('[data-id="x2hqv"]'); }
+    get kCupsCoffeePods() { return $('[data-id="6kpkn"]'); }
+    get wholeBeanCoffee() { return $('[data-id="n8upo"]'); }
+    get espresso() { return $('[data-id="2dpp9"]'); }
+    get coffeeCreamers() { return $('[data-id="5xszv"]'); }
+    get coldBrewBottledCoffee() { return $('[data-id="260b3"]'); }
+    get instantCoffee() { return $('[data-id="05hso"]'); }
+    //Liquor submenu
+    get liquorTopSpirits() { return $('[data-id="y2mjk"]'); }
+    get liquorVodka() { return $('[data-id="ln0x9"]'); }
+    get liquorBourbon() { return $('[data-id="xxj34"]'); }
+    get liquorWhiskey() { return $('[data-id="5xm96"]'); }
+    get liquorTequila() { return $('[data-id="0091p"]'); }
+    get liquorRum() { return $('[data-id="vazqx"]'); }
+    get liquorGin() { return $('[data-id="9vaw3"]'); }
+    get liquorScotch() { return $('[data-id="ar4qr"]'); }
+    get liquorBrandyCognac() { return $('[data-id="hpmj8"]'); }
+    get liquorCocktailMixers() { return $('[data-id="4uez3"]'); }
+    get liquorLiqueursCordialsSchnapps() { return $('[data-id="fij4m"]'); }
+    get liquorBarWineTools() { return $('[data-id="5xts9"]'); }
 
 
   // Pantry
