@@ -187,12 +187,14 @@ get frozenFishAndSeafood() { return $('[data-id="cs8z5"]'); }
     get barWineTools() { return $('[data-id="5xts9"]'); }
 
     // Wine submenu
-    get wineUnder15() { return $('[data-id="ypj4e"]'); }
-    get winePairings() { return $('[data-id="kpr3f"]'); }
-    get whiteWine() { return $('[data-id="yskry"]'); }
-    get redWine() { return $('[data-id="fups0"]'); }
-    get roseWine() { return $('[data-id="qqz02"]'); }
-    get sparklingWine() { return $('[data-id="dd9ke"]'); }
+    get wineUnder15() { return $('a[href="/c/game-day/-/N-ypj4e"]'); }
+    get winePairings() { return $('a[href="/c/perfect-pairings/-/N-kpr3f"]'); }
+    get whiteWine() { return $('a[href="/c/white-wine-beer-liquor-grocery/-/N-yskry"]'); }
+    get redWine() { return $('a[href="/c/red-wine-beer-liquor-grocery/-/N-fups0"]'); }
+    get roseWine() { return $('a[href="/c/rose-wine-beer-liquor-grocery/-/N-qqz02"]'); }
+    get sparklingWine() { return $('a[href="/c/rose-wine-beer-liquor-grocery/-/N-qqz02"]'); }
+    get wineTargetSelects() { return $('a[href="/c/brands-we-love/-/N-iscgt"]'); }
+    
 
     // Beer submenu
     get allBeer() { return $('[data-id="d7mti"]'); }
