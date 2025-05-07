@@ -47,16 +47,16 @@ class SecureBottomLinks {
     while (currentHeight > lastHeight) {
       lastHeight = currentHeight;
       await browser.execute(() => window.scrollTo(0, document.body.scrollHeight - 400));
-      await browser.pause(1000);
+      // await browser.pause(1000);
       currentHeight = await browser.execute(() => document.body.scrollHeight);
     }
-    await browser.pause(1000);
+    // await browser.pause(1000);
   }
 
   async clickAndVerifyLink(link, urlPart) {
     await link.waitForDisplayed({ timeout: 10000 });
     await link.click();
-    await browser.pause(2000);
+    // await browser.pause(2000);
     const url = await browser.getUrl();
     expect(url).toMatch(new RegExp(urlPart));
   }

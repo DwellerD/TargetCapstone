@@ -6,7 +6,7 @@ describe('Footer Link Selectors Visibility and Navigation Test', () => {
     it(`should verify footer link #${index + 1}: ${label}`, async () => {
       await browser.reloadSession();
       await TargetPage.open();
-      await browser.pause(1000);
+      // await browser.pause(1000);
 
       await SecureBottomLinks.scrollToFooter();
       await SecureBottomLinks.clickAndVerifyLink(element(), urlPart);

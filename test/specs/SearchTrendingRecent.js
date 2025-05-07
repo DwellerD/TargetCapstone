@@ -4,10 +4,10 @@ import SearchBar from '../pageobjects/searchBar.js';
 describe('Search Bar - Trending and Recent Searches', () => {
   it('should show recent search after using a trending item, then clear it', async () => {
     await TargetPage.open();
-    await browser.pause(1000);
+    // await browser.pause(1000);
 
     await SearchBar.searchInput.click();
-    await browser.pause(1000);
+    // await browser.pause(1000);
 
     const trendingItems = await $$('.sc-6e2eb6e3-1.hgtqQR');
     if (!trendingItems.length) throw new Error('No trending items found');
@@ -15,10 +15,10 @@ describe('Search Bar - Trending and Recent Searches', () => {
     const firstItem = trendingItems[0];
     const term = await firstItem.getText();
     await firstItem.click();
-    await browser.pause(2000);
+    // await browser.pause(2000);
 
     await SearchBar.searchInput.click();
-    await browser.pause(1000);
+    // await browser.pause(1000);
 
     const recentItems = await $$('.sc-6e2eb6e3-1.hgtqQR');
     const recentTexts = [];
@@ -30,7 +30,7 @@ describe('Search Bar - Trending and Recent Searches', () => {
 
     await SearchBar.clearRecentSearchesButton.waitForClickable({ timeout: 5000 });
     await SearchBar.clearRecentSearchesButton.click();
-    await browser.pause(1000);
+    // await browser.pause(1000);
 
     const clearedItems = await $$('.sc-6e2eb6e3-1.hgtqQR');
     const clearedTexts = [];

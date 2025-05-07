@@ -2,44 +2,32 @@ import TargetPage from '../pageobjects/targetPage.js';
 import GroceryPage from '../pageobjects/GroceryPage.js';
 import SecurePage from '../pageobjects/secure.page.js';
 
-const bakeryBreadSubcategories = [
-  { name: 'Breads', click: () => GroceryPage.breads, secure: () => SecurePage.breads },
-  { name: 'Donuts & Pastries', click: () => GroceryPage.donutsPastries, secure: () => SecurePage.donutsPastries },
-  { name: 'Cakes, Cookies & Pies', click: () => GroceryPage.cakesCookiesPies, secure: () => SecurePage.cakesCookiesPies },
-  { name: 'Bagels & Muffins', click: () => GroceryPage.bagelsMuffins, secure: () => SecurePage.bagelsMuffins },
-  { name: 'Tortillas, Pitas & Wraps', click: () => GroceryPage.tortillasWraps, secure: () => SecurePage.tortillasWraps },
-  { name: 'Refrigerated Doughs', click: () => GroceryPage.refrigeratedDoughs, secure: () => SecurePage.refrigeratedDoughs },
-  { name: 'Rolls & Buns', click: () => GroceryPage.rollsBuns, secure: () => SecurePage.rollsBuns },
-  { name: 'Pizza Crusts', click: () => GroceryPage.pizzaCrusts, secure: () => SecurePage.pizzaCrusts },
-];
+const bakeryBreadSubcategories = GroceryPage.bakerySubcategoriesList.map(name => ({
+  name,
+  secureTitle: name
+}));
 
 describe('Bakery & Bread Subcategory Secure Pages', () => {
-  bakeryBreadSubcategories.forEach(({ name, click, secure }) => {
+  bakeryBreadSubcategories.forEach(({ name, secureTitle }) => {
     it(`should verify ${name}`, async () => {
       await browser.reloadSession();
       await TargetPage.open();
-      await browser.pause(1000);
+      // // await browser.pause(1000);
 
-      await GroceryPage.categoriesButton.waitForClickable({ timeout: 10000 });
       await GroceryPage.categoriesButton.click();
-      await browser.pause(1000);
+      // // await browser.pause(1000);
 
-      await GroceryPage.groceryMain.waitForClickable({ timeout: 10000 });
-      await GroceryPage.groceryMain.click();
-      await browser.pause(1000);
+      await GroceryPage.getItemByText('Grocery').click();
+      // // await browser.pause(1000);
 
-      await GroceryPage.bakeryBread.waitForClickable({ timeout: 10000 });
-      await GroceryPage.bakeryBread.click();
-      await browser.pause(1000);
+      await GroceryPage.getItemByText('Bakery & Bread').click();
+      // // await browser.pause(1000);
 
-      const element = click();
-      await element.waitForClickable({ timeout: 10000 });
-      await element.click();
-      await browser.pause(1000);
+      await GroceryPage.getItemByText(name).click();
+      // // await browser.pause(1000);
 
-      const secureElement = secure();
-      await secureElement.waitForDisplayed({ timeout: 15000 });
-      await browser.pause(500);
+      await SecurePage.getPageByTitle(secureTitle).then(el => el.waitForDisplayed({ timeout: 15000 }));
+      // // await browser.pause(500);
     });
   });
 });
