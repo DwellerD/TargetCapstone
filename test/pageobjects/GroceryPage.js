@@ -289,6 +289,9 @@ get frozenFishAndSeafood() { return $('[data-id="cs8z5"]'); }
   get preparedMealsSides() { return $('[data-id="7dopp"]'); }
   get freshSoups() { return $('[data-id="p2osw"]'); }
   get partyTrays() { return $('[data-id="tgba0"]'); }
+  get specialtyCheese() { return $('[data-id="jfn2p"]'); }
+  get specialtyMeat() { return $('[data-id="r4ma6"]'); }
+
 
   // Wine & Alcohol
   get perfectMealPairings() { return $('[data-id="5xsxv"]'); }

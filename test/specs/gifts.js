@@ -1,6 +1,6 @@
-import TargetPage from '../../pageobjects/targetPage.js';
-import GroceryPage from '../../pageobjects/GroceryPage.js';
-import SecurePage from '../../pageobjects/secure.page.js';
+import TargetPage from '../pageobjects/targetPage.js';
+import GroceryPage from '../pageobjects/GroceryPage.js';
+import SecurePage from '../pageobjects/secure.page.js';
 
 const allSubcategories = [
   { name: 'Food Gifts', click: () => GroceryPage.foodGifts, secure: () => SecurePage.foodGifts },

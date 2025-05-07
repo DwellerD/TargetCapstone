@@ -237,6 +237,9 @@ class SecurePage {
   get slicedDeliMeatCheese() { return $('//h1[@data-test="page-title" and text()="Sliced Deli Meat & Deli Cheese"]'); }
   get mealKitsDeli() { return $('//h1[@data-test="page-title" and text()="Meal Kits"]'); }
   get partyTrays() { return $('//h1[@data-test="page-title" and text()="Party Trays"]'); }
+  get specialtyCheese() { return $('//h1[@data-test="page-title" and contains(text(), "Specialty Cheese")]'); }
+  get specialtyMeat() { return $('//h1[@data-test="page-title" and contains(text(), "Specialty Meat")]'); }
+
 
   //Wine & alchohol
 
