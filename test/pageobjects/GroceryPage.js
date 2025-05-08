@@ -120,7 +120,6 @@ class GroceryPage {
     return [
       'Prepared Salads & Sandwiches',
       'Fresh Dips, Salsas & Hummus',
-      'Artisan Cheese & Cured Meats',
       'Packaged Lunch Meat',
       'Prepared Meals & Sides',
       'Fresh Soups',
@@ -134,7 +133,7 @@ class GroceryPage {
   get artisanSubcategoriesList() {
     return [
       'Specialty Cheese',
-      'Specialty Meat',
+      'Specialty Meats',
     ];
   }
 
@@ -172,9 +171,9 @@ class GroceryPage {
       'Pork',
       'Turkey',
       'Bacon',
-      'Sausage',
+      'Sausages',
       'Hot Dogs',
-      'Sliced Deli Meat & Cheese',
+      'Sliced Deli Meat & Deli Cheese',
       'Meatless Alternatives',
     ];
   }
@@ -205,7 +204,7 @@ class GroceryPage {
   get spicesSubcategoriesList() {
     return [
       'Breadcrumbs & Seasoned Coatings',
-      'Herbs Rubs & Spices',
+      'Herbs, Rubs & Spices',
       'Salt & Pepper'
     ];
   }
@@ -262,17 +261,6 @@ class GroceryPage {
     return [
       'Candy Variety Packs', 'Premium Candy', 'Chocolate Candy', 'Gum & Mints',
       'Gummy & Chewy Candy', 'Hard Candy'
-    ];
-  }
-  get wineSubcategoriesList() {
-    return [
-      'Top Rated Wines Under $15',
-      'Perfect Pairings',
-      'White Wine',
-      'Red Wine',
-      'Rose Wine',
-      'Champagne & Sparkling Wine',
-      'Target Selects'
     ];
   }
   

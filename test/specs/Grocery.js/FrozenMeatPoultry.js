@@ -1,14 +1,14 @@
-import TargetPage from '../pageobjects/targetPage.js';
-import GroceryPage from '../pageobjects/GroceryPage.js';
-import SecurePage from '../pageobjects/secure.page.js';
+import TargetPage from '../../pageobjects/targetPage.js';
+import GroceryPage from '../../pageobjects/GroceryPage.js';
+import SecurePage from '../../pageobjects/secure.page.js';
 
-const produceSubcategories = GroceryPage.produceSubcategoriesList.map(name => ({
+const frozenSubcategories = GroceryPage.frozenMeatPoultrySeafoodList.map(name => ({
   name,
   secureTitle: name
 }));
 
-describe('Produce Subcategory Secure Pages', () => {
-  produceSubcategories.forEach(({ name, secureTitle }) => {
+describe('Frozen Meat, Poultry & Seafood Subcategories Secure Pages', () => {
+  frozenSubcategories.forEach(({ name, secureTitle }) => {
     it(`should verify ${name}`, async () => {
       await browser.reloadSession();
       await TargetPage.open();
@@ -20,7 +20,10 @@ describe('Produce Subcategory Secure Pages', () => {
       await GroceryPage.getItemByText('Grocery').click();
       // await browser.pause(1000);
 
-      await GroceryPage.getItemByText('Produce').click();
+      await GroceryPage.getItemByText('Frozen Foods').click();
+      // await browser.pause(1000);
+
+      await GroceryPage.getItemByText('Frozen Meat, Poultry & Seafood').click();
       // await browser.pause(1000);
 
       await GroceryPage.getItemByText(name).click();
