@@ -1,15 +1,13 @@
 import TargetPage from '../pageobjects/targetPage.js';
-import SecureBottomLinks from '../pageobjects/SecureBottomLinks.js';
+import SecureFooterLinks from '../pageobjects/SecureFooterLinks.js';
 
-describe('Footer Link Selectors Visibility and Navigation Test', () => {
-  SecureBottomLinks.footerLinks.forEach(({ label, element, urlPart }, index) => {
-    it(`should verify footer link #${index + 1}: ${label}`, async () => {
-      await browser.reloadSession();
+describe('[Target] Footer Links - Secure Page Validation', () => {
+  for (const { label, urlPart } of SecureFooterLinks.footerLinks) {
+    it(`should validate footer link: ${label}`, async () => {
       await TargetPage.open();
-      // await browser.pause(1000);
-
-      await SecureBottomLinks.scrollToFooter();
-      await SecureBottomLinks.clickAndVerifyLink(element(), urlPart);
+      await browser.execute(() => window.scrollTo(0, document.body.scrollHeight));
+      await browser.pause(1000);
+      await SecureFooterLinks.validateFooterLink(label, urlPart);
     });
-  });
+  }
 });

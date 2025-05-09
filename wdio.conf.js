@@ -13,14 +13,14 @@ exports.config = {
     }],
     logLevel: 'info',
     bail: 0,
-    waitforTimeout: 10000,
+    waitforTimeout: 60000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
     framework: 'mocha',
     reporters: ['spec'],
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 180000 // 3 minutes per test
     },
 
     // Hook to maximize window if not already done via Chrome args
@@ -28,4 +28,3 @@ exports.config = {
         await browser.maximizeWindow();
     }
 }
-

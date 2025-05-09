@@ -1,10 +1,10 @@
-import TargetPage from '../../pageobjects/targetPage.js';
 import GroceryPage from '../../pageobjects/GroceryPage.js';
 import SecurePage from '../../pageobjects/secure.page.js';
 
-describe('Breakfast & Cereal Subcategory Secure Pages', () => {
-  it('should verify all subcategories under Breakfast & Cereal', async () => {
-    await TargetPage.open();
-    await SecurePage.verifyAllSubcategoriesInGroup('Breakfast & Cereal', GroceryPage.breakfastSubcategoriesList);
+describe('[Target] Breakfast & Cereal Subcategories', () => {
+  it('should navigate to and validate all Breakfast & Cereal subcategory pages', async () => {
+    const path = ['Grocery', 'Breakfast & Cereal'];
+    const list = GroceryPage.breakfastSubcategoriesList;
+    await SecurePage.verifyAllSubcategories(path, list);
   });
 });

@@ -1,19 +1,18 @@
-import TargetPage from '../../pageobjects/targetPage.js';
+// npx wdio run wdio.conf.js --spec ./test/specs/Grocery.js/Deli.js
 import GroceryPage from '../../pageobjects/GroceryPage.js';
 import SecurePage from '../../pageobjects/secure.page.js';
 
-describe('Deli Subcategory Secure Pages', () => {
-  it('should verify all subcategories under Deli', async () => {
-    await TargetPage.open();
-    await SecurePage.verifyAllSubcategoriesInGroup('Deli', GroceryPage.deliSubcategoriesList);
+describe('[Target] Deli Subcategories', () => {
+  it('should navigate to and validate all Deli subcategory pages', async () => {
+    const path = ['Grocery', 'Deli'];
+    const list = GroceryPage.deliSubcategoriesList;
+    await SecurePage.verifyAllSubcategories(path, list);
   });
 
-  it('should verify all subcategories under Artisan Cheese & Cured Meats', async () => {
-    await TargetPage.open();
-    await SecurePage.verifyAllSubcategoriesInNestedGroup(
-      'Deli',
-      'Artisan Cheese & Cured Meats',
-      GroceryPage.artisanSubcategoriesList
-    );
+  it('should navigate to and validate all Artisan Cheese & Meat subcategory pages', async () => {
+    const path = ['Grocery', 'Deli'];
+    const nested = 'Artisan Cheese & Cured Meats';
+    const list = GroceryPage.artisanSubcategoriesList;
+    await SecurePage.verifyNestedSubcategories(path, nested, list);
   });
 });

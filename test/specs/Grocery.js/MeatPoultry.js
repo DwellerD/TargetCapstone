@@ -1,10 +1,11 @@
-import TargetPage from '../../pageobjects/targetPage.js';
+//npx wdio run wdio.conf.js --spec ./test/specs/Grocery.js/MeatPoultry.js
 import GroceryPage from '../../pageobjects/GroceryPage.js';
 import SecurePage from '../../pageobjects/secure.page.js';
 
-describe('Meat & Seafood Subcategory Secure Pages', () => {
-  it('should verify all subcategories under Meat & Seafood', async () => {
-    await TargetPage.open();
-    await SecurePage.verifyAllSubcategoriesInGroup('Meat & Seafood', GroceryPage.meatSeafoodList);
+describe('[Target] Meat & Seafood Subcategories', () => {
+  it('should navigate to and validate all Meat & Seafood subcategory pages', async () => {
+    const path = ['Grocery', 'Meat & Seafood'];
+    const list = GroceryPage.meatSeafoodList;
+    await SecurePage.verifyAllSubcategories(path, list);
   });
 });

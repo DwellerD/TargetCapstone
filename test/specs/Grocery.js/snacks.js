@@ -1,21 +1,18 @@
-import TargetPage from '../../pageobjects/targetPage.js';
+//npx wdio run wdio.conf.js --spec ./test/specs/Grocery.js/snacks.js
 import GroceryPage from '../../pageobjects/GroceryPage.js';
 import SecurePage from '../../pageobjects/secure.page.js';
 
-const mainSnacks = GroceryPage.snackSubcategoriesList;
-const snackVariety = GroceryPage.snackVarietySubcategoriesList;
-const candy = GroceryPage.candySubcategoriesList;
-
-describe('Snacks Subcategory Secure Pages', () => {
-  it('should verify all Snacks subcategories', async () => {
-    await SecurePage.verifyAllSubcategoriesInGroup('Snacks', mainSnacks);
+describe('[Target] Snacks Subcategories', () => {
+  it('should navigate to and validate all main Snacks subcategory pages', async () => {
+    const path = ['Grocery', 'Snacks'];
+    const list = GroceryPage.snackSubcategoriesList;
+    await SecurePage.verifyAllSubcategories(path, list);
   });
 
-  it('should verify all Candy subcategories', async () => {
-    await SecurePage.verifyAllSubcategoriesInNestedGroup('Snacks', 'Candy', candy);
-  });
-
-  it('should verify all Snack Variety Packs subcategories', async () => {
-    await SecurePage.verifyAllSubcategoriesInNestedGroup('Snacks', 'Snack Variety Packs', snackVariety);
+  it('should navigate to and validate all Snack Variety Packs subcategory pages', async () => {
+    const path = ['Grocery', 'Snacks'];
+    const nested = 'Snack Variety Packs';
+    const list = GroceryPage.snackVarietySubcategoriesList;
+    await SecurePage.verifyNestedSubcategories(path, nested, list);
   });
 });

@@ -1,25 +1,32 @@
-import TargetPage from '../../pageobjects/targetPage.js';
+//npx wdio run wdio.conf.js --spec ./test/specs/Grocery.js/Pantry.js
 import GroceryPage from '../../pageobjects/GroceryPage.js';
 import SecurePage from '../../pageobjects/secure.page.js';
 
-describe('Pantry Subcategory Secure Pages', () => {
-  it('should verify all subcategories under Pantry', async () => {
-    await TargetPage.open();
-    await SecurePage.verifyAllSubcategoriesInGroup('Pantry', GroceryPage.pantryBaseList);
+describe('[Target] Pantry Subcategories', () => {
+  it('should navigate to and validate all base Pantry subcategory pages', async () => {
+    const path = ['Grocery', 'Pantry'];
+    const list = GroceryPage.pantryBaseList;
+    await SecurePage.verifyAllSubcategories(path, list);
   });
 
-  it('should verify all subcategories under Canned & Packaged Foods', async () => {
-    await TargetPage.open();
-    await SecurePage.verifyAllSubcategoriesInNestedGroup('Pantry', 'Canned & Packaged Foods', GroceryPage.cannedSubcategoriesList);
+  it('should navigate to and validate all Canned Goods subcategory pages', async () => {
+    const path = ['Grocery', 'Pantry'];
+    const nested = 'Canned & Packaged Foods';
+    const list = GroceryPage.cannedSubcategoriesList;
+    await SecurePage.verifyNestedSubcategories(path, nested, list);
   });
 
-  it('should verify all subcategories under Spices & Seasonings', async () => {
-    await TargetPage.open();
-    await SecurePage.verifyAllSubcategoriesInNestedGroup('Pantry', 'Spices & Seasonings', GroceryPage.spicesSubcategoriesList);
+  it('should navigate to and validate all Spices & Seasonings subcategory pages', async () => {
+    const path = ['Grocery', 'Pantry'];
+    const nested = 'Spices & Seasonings';
+    const list = GroceryPage.spicesSubcategoriesList;
+    await SecurePage.verifyNestedSubcategories(path, nested, list);
   });
 
-  it('should verify all subcategories under Baking Staples', async () => {
-    await TargetPage.open();
-    await SecurePage.verifyAllSubcategoriesInNestedGroup('Pantry', 'Baking Staples', GroceryPage.bakingSubcategoriesList);
+  it('should navigate to and validate all Baking Essentials subcategory pages', async () => {
+    const path = ['Grocery', 'Pantry'];
+    const nested = 'Baking Staples';
+    const list = GroceryPage.bakingSubcategoriesList;
+    await SecurePage.verifyNestedSubcategories(path, nested, list);
   });
 });
