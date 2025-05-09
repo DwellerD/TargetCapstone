@@ -1,10 +1,18 @@
 import TargetPage from '../../pageobjects/targetPage.js';
-import SearchBar from '../../pageobjects/SearchBar.js';
+import SearchBar from '../../pageobjects/searchBar.js';
 
-describe('[Target] Search Bar - Negative Input Handling', () => {
-  it('should display a no results message for nonsense input', async () => {
-    await TargetPage.open();
-    await SearchBar.searchUsingMagnifyingGlass('xzyqplmno123');
-    await SearchBar.validateNoResults();
-  });
+const singleCharInputs = [
+  '!', '@', '#', '$', '%', '^', '&', '*', '(', ')',
+  '[', ']', '{', '}', '|', '\\', '/', ':', ';', '"',
+  ',', '.', '?', '-', '+', '=', '~', '`', '<', '>',
+  '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+];
+
+describe('[Target] Search Bar - Single Non-Letter Character Handling', () => {
+  for (const char of singleCharInputs) {
+    it(`should handle input "${char}" without breaking search`, async () => {
+      await TargetPage.open();
+      await SearchBar.searchAndValidate(char);
+    });
+  }
 });
