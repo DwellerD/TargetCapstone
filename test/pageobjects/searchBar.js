@@ -1,4 +1,5 @@
 import { $ } from '@wdio/globals';
+import TargetPage from './targetPage.js';
 
 class SearchBar {
   get searchInput() {
@@ -30,19 +31,9 @@ class SearchBar {
   }
 
   async openAndClickSearch() {
+    await TargetPage.open();
     await this.searchInput.waitForClickable({ timeout: 5000 });
     await this.searchInput.click();
-  }
-
-  async waitForTrendingItems() {
-    await browser.waitUntil(
-      async () => (await this.trendingSearches.length) > 0,
-      {
-        timeout: 5000,
-        timeoutMsg: 'Trending items did not appear within 5 seconds',
-      }
-    );
-    return Array.from(this.trendingSearches);
   }
 
   async waitForTrendingItem(index) {
@@ -59,6 +50,8 @@ class SearchBar {
     await this.waitForTrendingItem(index);
     const items = await this.trendingSearches;
     const item = items[index];
+    await item.waitForDisplayed({ timeout: 3000 });
+    await item.waitForClickable({ timeout: 3000 });
     const term = await item.getText();
     await item.click();
     return term;
@@ -68,56 +61,29 @@ class SearchBar {
     await this.searchInput.waitForDisplayed({ timeout: 3000 });
     await this.searchInput.click();
 
+    const xButton = this.clearInputButton;
+    if (await xButton.isDisplayed()) {
+      await xButton.waitForClickable({ timeout: 3000 });
+      await xButton.click();
+    }
+
     await browser.waitUntil(
-      async () => (await this.clearRecentSearchesButton.isDisplayed()),
+      async () =>
+        (await this.clearRecentSearchesButton.isDisplayed()) &&
+        (await this.clearRecentSearchesButton.isClickable()),
       {
-        timeout: 3000,
-        timeoutMsg: 'Clear recent searches button not visible',
+        timeout: 5000,
+        timeoutMsg: 'Clear recent searches button not ready',
       }
     );
 
-    await this.clearRecentSearchesButton.waitForClickable({ timeout: 3000 });
     await this.clearRecentSearchesButton.click();
   }
 
-  async typeAndClearWithX(term) {
-    await this.searchInput.waitForDisplayed({ timeout: 3000 });
-    await this.searchInput.setValue(term);
-
-    const xButton = this.clearInputButton;
-    await xButton.waitForClickable({ timeout: 3000 });
-    await xButton.click();
-
-    const value = await this.searchInput.getValue();
-    if (value !== '') {
-      throw new Error(`Input not cleared. Current value: "${value}"`);
-    }
-  }
-
-  async searchUsingMagnifyingGlass(term) {
-    await this.searchInput.waitForDisplayed({ timeout: 3000 });
-    await this.searchInput.setValue(term);
-    await this.magnifyingGlassButton.waitForClickable({ timeout: 3000 });
-    await this.magnifyingGlassButton.click();
-  }
-
-  async validateNoResults() {
-    const message = await this.noResultsMessage;
-    await message.waitForDisplayed({ timeout: 3000 });
-    const text = await message.getText();
-    if (!text.toLowerCase().includes('no results')) {
-      throw new Error(`Expected a no-results message but got: "${text}"`);
-    }
-  }
-
   async validateUrlContains(term) {
-    const normalized = encodeURIComponent(term.toLowerCase().trim().replace(/\s+/g, '+'));
-
+    const normalized = term.toLowerCase().trim().replace(/\s+/g, '+');
     await browser.waitUntil(
-      async () => {
-        const url = await browser.getUrl();
-        return url.toLowerCase().includes(normalized);
-      },
+      async () => (await browser.getUrl()).toLowerCase().includes(normalized),
       {
         timeout: 5000,
         timeoutMsg: `URL did not update to include "${normalized}"`,
@@ -130,34 +96,38 @@ class SearchBar {
     }
   }
 
-  async expectSearchFailureMessageVisible() {
-    const elements = await $$('h2[data-test="nullLowRecoveryKeyword"]');
-    if (elements.length === 0) {
-      throw new Error(`Search failure message not found`);
-    }
-
-    const isDisplayed = await elements[0].isDisplayed();
-    if (!isDisplayed) {
-      throw new Error(`Search failure message exists but is not visible`);
-    }
-  }
-
-  async searchAndValidate(term) {
-    await this.searchUsingMagnifyingGlass(term);
-
+  async validateNoResultsOrFallback() {
     try {
-      await this.validateNoResults();
-      console.log(`[Search Result] "${term}" → No Results Found`);
+      await this.noResultsMessage.waitForDisplayed({ timeout: 3000 });
     } catch {
-      try {
-        await this.expectSearchFailureMessageVisible();
-        console.log(`[Search Result] "${term}" → Search Failure Message`);
-      } catch {
-        await this.validateUrlContains(term);
-        console.log(`[Search Result] "${term}" → Valid Result`);
+      const fallback = await this.searchFailureHeading;
+      if (!(await fallback.isDisplayed())) {
+        throw new Error('No fallback message or no-results message shown');
       }
     }
   }
+
+  async validateAllTrendingItems() {
+    for (let i = 0; i < 10; i++) {
+      await this.openAndClickSearch();
+      const term = await this.getAndClickTrendingItem(i);
+      await this.validateUrlContains(term);
+      await this.clearSearch();
+    }
+  }
+
+  async validateSecurityInputs() {
+    const dangerousChars = ['<', '>', '{', '}', '"', "'", '`', '\\', '|', ';'];
+    for (const char of dangerousChars) {
+      await this.openAndClickSearch();
+      await this.searchInput.setValue(char);
+      await this.magnifyingGlassButton.waitForClickable({ timeout: 3000 });
+      await this.magnifyingGlassButton.click();
+      await this.validateNoResultsOrFallback();
+      await this.clearSearch();
+    }
+  }
+  
 }
 
 export default new SearchBar();

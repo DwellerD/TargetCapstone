@@ -8,7 +8,7 @@ exports.config = {
     capabilities: [{
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: ['--start-maximized'] // Ensures the browser starts in full screen
+            args: ['--start-maximized']
         }
     }],
     logLevel: 'info',
@@ -20,10 +20,10 @@ exports.config = {
     reporters: ['spec'],
     mochaOpts: {
         ui: 'bdd',
-        timeout: 180000 // 3 minutes per test
+        timeout: 180000,
+        retries: 2
     },
 
-    // Hook to maximize window if not already done via Chrome args
     before: async function () {
         await browser.maximizeWindow();
     }

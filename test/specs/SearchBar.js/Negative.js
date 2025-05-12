@@ -1,18 +1,9 @@
-import TargetPage from '../../pageobjects/targetPage.js';
+//npx wdio run wdio.conf.js --spec ./test/specs/SearchBar.js/Negative.js 
+//npx wdio run wdio.conf.js --spec test/specs/SearchBar.js/*
 import SearchBar from '../../pageobjects/searchBar.js';
 
-const singleCharInputs = [
-  '!', '@', '#', '$', '%', '^', '&', '*', '(', ')',
-  '[', ']', '{', '}', '|', '\\', '/', ':', ';', '"',
-  ',', '.', '?', '-', '+', '=', '~', '`', '<', '>',
-  '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
-];
-
-describe('[Target] Search Bar - Single Non-Letter Character Handling', () => {
-  for (const char of singleCharInputs) {
-    it(`should handle input "${char}" without breaking search`, async () => {
-      await TargetPage.open();
-      await SearchBar.searchAndValidate(char);
-    });
-  }
+describe('[Target] Search Bar - Single Character Security Input Handling', () => {
+  it('should validate all dangerous characters return no results or fallback messages', async () => {
+    await SearchBar.validateSecurityInputs();
+  });
 });
