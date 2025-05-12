@@ -2,29 +2,28 @@ import { $ } from '@wdio/globals';
 import TargetPage from './targetPage.js';
 
 class GroceryPage {
- getItemByText(name) {
-  return $(`//span[contains(@class, "styles_wrapper") and text()="${name}"]`);
-}
-
-
-  async waitUntilVisibleAndClickable(element, timeout = 10000) {
-    await element.waitForExist({ timeout });
-    await element.waitForDisplayed({ timeout });
-    await element.waitForClickable({ timeout });
+  getItemByText(name) {
+    return $(`//span[contains(@class, "styles_wrapper") and text()="${name}"]`);
   }
 
-async openGroceryRoot() {
-  await TargetPage.open();
+  async waitUntilVisibleAndClickable(element, timeout = 15000) {
+    await browser.waitUntil(
+      async () => (await element.isExisting()) && (await element.isDisplayed()) && (await element.isClickable()),
+      { timeout }
+    );
+  }
 
-  const categories = await $('a[aria-label="Categories"]');
-  await this.waitUntilVisibleAndClickable(categories);
-  await categories.click();
+  async openGroceryRoot() {
+    await TargetPage.open();
 
-  const grocery = await $('[data-id="5xt1a"]');
-  await this.waitUntilVisibleAndClickable(grocery);
-  await grocery.click();
-}
+    const categories = await $('a[aria-label="Categories"]');
+    await this.waitUntilVisibleAndClickable(categories);
+    await categories.click();
 
+    const grocery = await $('[data-id="5xt1a"]');
+    await this.waitUntilVisibleAndClickable(grocery);
+    await grocery.click();
+  }
 
   async navigateAndValidate(path = []) {
     await this.openGroceryRoot();
@@ -39,7 +38,7 @@ async openGroceryRoot() {
 
     const final = path[path.length - 1];
     const title = await $('h1[data-test="page-title"]');
-    await title.waitForDisplayed({ timeout: 15000 });
+    await title.waitForDisplayed({ timeout: 20000 });
     await expect(title).toHaveText(final);
   }
 

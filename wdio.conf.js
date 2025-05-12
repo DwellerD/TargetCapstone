@@ -26,5 +26,16 @@ exports.config = {
 
     before: async function () {
         await browser.maximizeWindow();
+    },
+
+    afterTest: async () => {
+        const handles = await browser.getWindowHandles();
+        if (handles.length > 1) {
+            for (let i = 1; i < handles.length; i++) {
+                await browser.switchToWindow(handles[i]);
+                await browser.closeWindow();
+            }
+            await browser.switchToWindow(handles[0]);
+        }
     }
 }
