@@ -1,10 +1,12 @@
 import TargetPage from '../pageobjects/targetPage.js';
 import FooterLinks from '../pageobjects/FooterLinks.js';
 
+const targetPage = new TargetPage();
+
 describe('[Target] Footer Links', () => {
   beforeEach(async () => {
     await browser.reloadSession();
-    await TargetPage.open();
+    await targetPage.navigateToHomePage();
     await browser.execute(() => window.scrollTo(0, document.body.scrollHeight));
   });
 

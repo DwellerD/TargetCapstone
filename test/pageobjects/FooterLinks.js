@@ -1,13 +1,11 @@
-import { $ } from '@wdio/globals';
-
 class FooterLinks {
-  getLinkByAriaLabel(name) {
-    return $(`[aria-label="${name}"]`);
+  getLinkByLabel(label) {
+    return $(`[aria-label="${label}"]`);
   }
 
   async validateGroup(linkList) {
     for (const { label, urlPart } of linkList) {
-      const link = await this.getLinkByAriaLabel(label);
+      const link = await this.getLinkByLabel(label);
 
       await link.waitForExist({ timeout: 10000 });
       await link.waitForDisplayed({ timeout: 10000 });

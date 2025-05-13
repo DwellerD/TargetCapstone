@@ -1,7 +1,6 @@
-import { $ } from '@wdio/globals';
 import TargetPage from './targetPage.js';
 
-class GroceryPage {
+class GroceryPage extends TargetPage {
   getItemByText(name) {
     return $(`//span[contains(@class, "styles_wrapper") and text()="${name}"]`);
   }
@@ -14,7 +13,8 @@ class GroceryPage {
   }
 
   async openGroceryRoot() {
-    await TargetPage.open();
+    await this.navigateToHomePage();
+
 
     const categories = await $('a[aria-label="Categories"]');
     await this.waitUntilVisibleAndClickable(categories);

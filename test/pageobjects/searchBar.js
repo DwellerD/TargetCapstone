@@ -31,7 +31,7 @@ class SearchBar {
   }
 
   async openAndClickSearch() {
-    await TargetPage.open();
+    await new TargetPage().navigateToHomePage();
     await this.searchInput.waitForClickable({ timeout: 5000 });
     await this.searchInput.click();
   }
@@ -41,7 +41,7 @@ class SearchBar {
       async () => (await this.trendingSearches).length > index,
       {
         timeout: 5000,
-        timeoutMsg: `Trending item at index ${index} did not appear in time`,
+        timeoutMsg: `Trending item at index ${index} did not appear in time`
       }
     );
   }
@@ -73,7 +73,7 @@ class SearchBar {
         (await this.clearRecentSearchesButton.isClickable()),
       {
         timeout: 5000,
-        timeoutMsg: 'Clear recent searches button not ready',
+        timeoutMsg: 'Clear recent searches button not ready'
       }
     );
 
@@ -86,7 +86,7 @@ class SearchBar {
       async () => (await browser.getUrl()).toLowerCase().includes(normalized),
       {
         timeout: 5000,
-        timeoutMsg: `URL did not update to include "${normalized}"`,
+        timeoutMsg: `URL did not update to include "${normalized}"`
       }
     );
 
@@ -127,7 +127,6 @@ class SearchBar {
       await this.clearSearch();
     }
   }
-  
 }
 
 export default new SearchBar();
